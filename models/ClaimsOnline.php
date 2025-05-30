@@ -38,9 +38,33 @@ class ClaimModel {
             return false;
         }
 
-        $types = $this->getParamTypes($data) . 'i';  // add 'i' for id
+        $types = $this->getParamTypes($data) . 'i'; // Add 'i' for the ID
         $values = array_values($data);
         $values[] = $id;
+
+        $stmt->bind_param($types, ...$values);
+        $result = $stmt->execute();
+        $stmt->close();
+
+        return $result;
+    }
+
+    // Update uploaded file fields for a claim
+    public function updateClaimFiles(int $claimId, array $fileData): bool {
+        if (empty($fileData)) return false;
+
+        $fields = array_keys($fileData);
+        $placeholders = implode(' = ?, ', $fields) . ' = ?';
+        $sql = "UPDATE claims_online SET $placeholders WHERE id = ?";
+
+        $stmt = $this->mysqli->prepare($sql);
+        if (!$stmt) {
+            return false;
+        }
+
+        $types = $this->getParamTypes($fileData) . 'i'; // Add 'i' for ID
+        $values = array_values($fileData);
+        $values[] = $claimId;
 
         $stmt->bind_param($types, ...$values);
         $result = $stmt->execute();
@@ -63,7 +87,7 @@ class ClaimModel {
         return $result;
     }
 
-    // Helper function to get param types for bind_param
+    // Get MySQLi param types string for bind_param
     private function getParamTypes(array $params): string {
         $types = '';
         foreach ($params as $param) {

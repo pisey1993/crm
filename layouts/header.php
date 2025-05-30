@@ -1,4 +1,4 @@
-<?php $title = 'crm2' ?>
+<?php $title = 'crm' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
