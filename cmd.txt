@@ -1,0 +1,4 @@
+git add .
+git commit -m "add file htaccess"
+git push origin branch-name
+git push origin branch-name

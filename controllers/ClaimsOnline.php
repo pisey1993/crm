@@ -124,7 +124,7 @@ include "../layouts/header.php";
                                 </tbody>
                             </table>
                         </div>
-                        <a href="../views/claims_online.php" class="btn btn-primary mt-3">Submit Another Claim</a>
+                        <a href="../claims_online.php" class="btn btn-primary mt-3">Submit Another Claim</a>
                     <?php else: ?>
                         <div class="alert alert-danger">
                             Failed to insert claim. Error: <?php echo mysqli_error($connection); ?>

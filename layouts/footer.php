@@ -214,22 +214,65 @@ showStep(currentStep);
 //Select Product
 function myFunction(buttonId) {
     const policySelect = document.getElementById('policy_type');
-    const select = document.getElementById('myTabContent');
+
+    const policy = document.getElementById('policy');
 
     if (buttonId === 'btn_auto') {
         policySelect.value = 'Auto';
     } else if (buttonId === 'btn_chc') {
         policySelect.value = 'Healthcare';
-        
+
     }
-    document.getElementById('btn_auto').style.display='none';
-    document.getElementById('btn_chc').style.display='none';
-   
+    document.getElementById('btn_auto').style.display = 'none';
+    document.getElementById('btn_chc').style.display = 'none';
+
     // Trigger the onchange event manually if needed
     policySelect.dispatchEvent(new Event('change'));
+    policy.style.display = 'block'; // or 'inline-block' for better alignment
 
-    select.style.display = 'block'; // or 'inline-block' for better alignment
 
+   const form = document.getElementById('myForm');
+const resultDiv = document.getElementById('result');
+const resultInput = document.getElementById('policystatus');
+const submitButton = form.querySelector('button[type="submit"]');
+const policyNumberCheck = document.getElementById('policy_number_check');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    // Save original text and show loading
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Verifying...';
+    submitButton.disabled = true;
+
+    const formData = new FormData(form);
+
+    fetch('controllers/getdata.php', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            resultInput.value = data.status_code;
+            resultDiv.textContent = data.message;
+
+            if (data.status_code === 1 || data.status_code === "1") {
+                document.getElementById('myTabContent').style.display = 'block';
+                document.getElementById('policy_number').value = policyNumberCheck.value;
+            } else {
+                document.getElementById('myTabContent').style.display = 'none';
+            }
+        })
+        .catch(error => {
+            resultDiv.textContent = 'Error: ' + error.message;
+            resultInput.value = 'Error';
+        })
+        .finally(() => {
+            // Restore button state
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+});
 
 }
 </script>
