@@ -210,6 +210,28 @@ document.getElementById('multiStepForm').addEventListener('submit', e => {
 });
 
 showStep(currentStep);
+
+//Select Product
+function myFunction(buttonId) {
+    const policySelect = document.getElementById('policy_type');
+    const select = document.getElementById('myTabContent');
+
+    if (buttonId === 'btn_auto') {
+        policySelect.value = 'Auto';
+    } else if (buttonId === 'btn_chc') {
+        policySelect.value = 'Healthcare';
+        
+    }
+    document.getElementById('btn_auto').style.display='none';
+    document.getElementById('btn_chc').style.display='none';
+   
+    // Trigger the onchange event manually if needed
+    policySelect.dispatchEvent(new Event('change'));
+
+    select.style.display = 'block'; // or 'inline-block' for better alignment
+
+
+}
 </script>
 
 <!--<hr>-->
