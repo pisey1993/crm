@@ -48,7 +48,7 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="claimsDropdown">
                             <li>
                                 <a class="dropdown-item"
-                                    href="/<?php echo htmlspecialchars($title); ?>/views/claims_online.php">
+                                    href="/<?php echo htmlspecialchars($title); ?>/claims_online.php">
                                     <i class="bi bi-file-earmark-plus"></i> Submit Claims
                                 </a>
                             </li>
@@ -69,7 +69,7 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="findersDropdown">
                             <li>
                                 <a class="dropdown-item"
-                                    href="/<?php echo htmlspecialchars($title); ?>/views/policy-finder">
+                                    href="/<?php echo htmlspecialchars($title); ?>/policy-finder">
                                     <i class="bi bi-search"></i> Policy Finder
                                 </a>
                             </li>
@@ -97,13 +97,13 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="productDropdown">
                             <li>
                                 <a class="dropdown-item"
-                                    href="/<?php echo htmlspecialchars($title); ?>/views/buy-insurance">
+                                    href="/<?php echo htmlspecialchars($title); ?>/buy-insurance">
                                     <i class="bi bi-cart-plus"></i> Buy Insurance Policy
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item"
-                                    href="/<?php echo htmlspecialchars($title); ?>/views/insurance/request-quote">
+                                    href="/<?php echo htmlspecialchars($title); ?>/insurance/request-quote">
                                     <i class="bi bi-pencil-square"></i> Ask For Quote
                                 </a>
                             </li>

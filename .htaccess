@@ -1,0 +1,20 @@
+RewriteEngine On
+
+# Redirect direct .php requests inside views/ to clean URL
+RewriteCond %{THE_REQUEST} \s/+(crm/)?views/([^.]+)\.php[?\s] [NC]
+RewriteRule ^ /crm/%2 [R=301,L]
+
+# Redirect /index to root /
+RewriteCond %{THE_REQUEST} \s/+(crm/)?index[?\s] [NC]
+RewriteRule ^index$ /crm/ [R=301,L]
+
+# Serve index.php from root when URL is /crm/ or /crm
+RewriteRule ^$ index.php [L]
+
+# If request matches a real file or directory in root, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Otherwise, rewrite /something to /views/something.php internally
+RewriteRule ^([^/]+)$ views/$1.php [L]
