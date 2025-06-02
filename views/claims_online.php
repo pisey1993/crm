@@ -1,4 +1,5 @@
 <?php include '../layouts/header.php' ?>
+<?php include '../controllers/province.php' ?>
 
 <div class="content">
 
@@ -56,7 +57,7 @@
                                 <div class="form-group" style="display: none;" id="policy">
                                     <label for="policy_number" class="form-label">Policy Number</label>
                                     <input type="text" id="policy_number_check" name="policy_number_check"
-                                        class="form-control" placeholder="Enter policy number" required>
+                                        class="form-control" placeholder="Enter policy number" required value="<?php echo $session_policy ?>">
 
                                     <button type="submit" class="btn btn-primary" style="margin-top: 1%;">Verify
                                         Policy</button>
@@ -97,8 +98,10 @@
                                                         </select>
 
                                                     </div>
+                                                    <label for="claim_type" class="form-label">Policy Number</label>
                                                     <input type="text" style="display: none;" id="policy_number" name="policy_number"
                                                         class="form-control" placeholder="Enter policy number" required>
+                                                    <input disabled class="form-control" type="text" id="pcheck" value="<?php echo $session_policy ?>" style="display: none;">
                                                     <div class="form-group">
                                                         <label for="claim_type" class="form-label">Claim Type</label>
                                                         <select id="claim_type" name="claim_type" class="form-control">
@@ -134,7 +137,8 @@
                                                         <label for="insured_name" class="form-label">Insured
                                                             Name</label>
                                                         <input type="text" id="insured_name" name="insured_name"
-                                                            class="form-control" placeholder="Full name of the insured">
+                                                            class="form-control" placeholder="Full name of the insured" value="<?php echo $insuredName ?>" style="display: none">
+                                                        <input type="text" class="form-control" placeholder="Full name of the insured" value="<?php echo $insuredName ?>" disabled>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="insured_contact" class="form-label">Phone Number (If
@@ -174,9 +178,14 @@
                                                     <div class="form-group">
                                                         <label for="incident_location" class="form-label">Incident
                                                             Location</label>
-                                                        <input type="text" id="incident_location"
-                                                            name="incident_location" class="form-control"
-                                                            placeholder="Where did the incident occur?">
+
+                                                        <select id="incident_location" name="incident_location"
+                                                                class="form-control">
+                                                            <option value="">-- Select Where did the incident occur? --</option>
+                                                            <?php foreach ($provinces as $province): ?>
+                                                                <option value="<?php echo htmlspecialchars($province); ?>"><?php echo htmlspecialchars($province); ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
                                                     </div>
                                                     <div class="form-group md:col-span-3"><label
                                                             for="incident_description" class="form-label">Incident
@@ -229,9 +238,13 @@
                                                     <div class="form-group">
                                                         <label for="vehicle_location" class="form-label">Vehicle
                                                             Location</label>
-                                                        <input type="text" id="vehicle_location" name="vehicle_location"
-                                                            class="form-control"
-                                                            placeholder="Current location of the vehicle">
+                                                        <select id="vehicle_location" name="vehicle_location"
+                                                                class="form-control">
+                                                            <option value="">-- Select Where is Current Location of Vehicle  --</option>
+                                                            <?php foreach ($provinces as $province): ?>
+                                                                <option value="<?php echo htmlspecialchars($province); ?>"><?php echo htmlspecialchars($province); ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
                                                     </div>
                                                     <div class="form-group md:col-span-3"><label for="vehicle_details"
                                                             class="form-label">Vehicle
@@ -362,6 +375,7 @@
                                                     to
                                                     auto claims.</p>
                                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
                                                     <div class="form-group">
                                                         <label for="driver_license" class="form-label">Driver
                                                             License</label>

@@ -258,6 +258,8 @@ form.addEventListener('submit', (event) => {
 
             if (data.status_code === 1 || data.status_code === "1") {
                 document.getElementById('myTabContent').style.display = 'block';
+                document.getElementById('pcheck').style.display = 'block';
+                document.getElementById('policy').style.display = 'none';
                 document.getElementById('policy_number').value = policyNumberCheck.value;
             } else {
                 document.getElementById('myTabContent').style.display = 'none';

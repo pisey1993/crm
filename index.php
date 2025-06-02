@@ -1,133 +1,174 @@
-<?php include 'layouts/header.php' ?>
+<?php
+$title = 'crm';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>People & Partners Insurance Plc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<div class="content" style="background-color:#f5f5f5">
-    <div class="container py-4">
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
-        <div class="mb-4">
-            <h1 class="h4 fw-bold text-dark mb-1">
-                Welcome To Client Portal
-            </h1>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Noto+Serif+Khmer:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- Custom Style -->
+    <style>
+        body {
+            font-family: "Noto Serif Khmer", serif;
+            padding-top: 70px;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .search-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        .search-box h2 {
+            color: #0d9488;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            padding: 12px 16px;
+            font-size: 1rem;
+            border: 2px solid #0d9488;
+            border-radius: 8px;
+            outline: none;
+            width: 300px;
+        }
+
+        .input-group button {
+            padding: 12px 20px;
+            font-size: 1rem;
+            background-color: #0d9488;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .result-message {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #0d9488;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        .bg-teal {
+            background-color: #0d9488 !important;
+        }
+
+        body.d-flex {
+            display: flex !important;
+            flex-direction: column !important;
+            min-height: 100vh !important;
+            padding-top: 70px;
+        }
+    </style>
+</head>
+
+<body class="d-flex">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-teal fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.peoplenpartners.com/"><img src="https://ppicis.peoplenpartners.net/logo-long-white.png" alt="Logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+            <ul class="navbar-nav">
+                <!-- Menu content removed -->
+            </ul>
         </div>
-
-        <!-- Group buttons in 3 columns -->
-        <main class="container-fluid">
-            <div class="row">
-
-                <!-- Claims Column -->
-                <div class="col-md-4">
-                    <h5 style="color: teal; border-bottom: 2px solid teal; padding-bottom: 0.3rem; margin-bottom: 1rem;">
-                        Claims
-                    </h5>
-                    <a href="claims_online.php" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center mb-3"
-                       style="height:110px;  border-radius: 10px; color: teal;">
-                        <i class="bi bi-file-earmark-plus" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Submit Claims</span>
-                    </a>
-                    <a href="checker" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center"
-                       style="height:110px;  border-radius: 10px; color: teal;">
-                        <i class="bi bi-check-circle" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Claims Checker</span>
-                    </a>
-                </div>
-
-                <!-- Finder Column -->
-                <div class="col-md-4">
-                    <h5 style="color: teal; border-bottom: 2px solid teal; padding-bottom: 0.3rem; margin-bottom: 1rem;">
-                        Finder
-                    </h5>
-                    <a href="policy-finder" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center mb-3"
-                       style="height:110px;  border-radius: 10px; color: teal;">
-                        <i class="bi bi-search" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Policy Finder</span>
-                    </a>
-                    <a href="https://www.peoplenpartners.com/panel-clinic" target="_blank" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center mb-3"
-                       style="height:110px;  border-radius: 10px; color: teal;">
-                        <i class="bi bi-hospital" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Panel Clinic Finder</span>
-                    </a>
-                    <a href="https://www.peoplenpartners.com/repair-garage" target="_blank" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center"
-                       style="height:110px;  border-radius: 10px; color: teal;">
-                        <i class="bi bi-tools" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Panel Garage Finder</span>
-                    </a>
-                </div>
-
-                <!-- Product Column -->
-                <div class="col-md-4">
-                    <h5 style="color: teal; border-bottom: 2px solid teal; padding-bottom: 0.3rem; margin-bottom: 1rem;">
-                        Product
-                    </h5>
-                    <a href="buy-insurance" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center mb-3"
-                       style="height:110px;  border-radius: 10px; color: teal;">
-                        <i class="bi bi-cart-plus" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Buy Insurance</span>
-                    </a>
-                    <a href="insurance/request-quote" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center"
-                       style="height:110px;  border-radius: 10px; color: teal;">
-                        <i class="bi bi-pencil-square" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Request Quote</span>
-                    </a>
-                </div>
-
-            </div>
-        </main>
-
     </div>
+</nav>
+
+<!-- Main Section -->
+<div class="container search-box flex-grow-1">
+    <h2>Enter Your Policy Number</h2>
+    <div class="input-group mb-3">
+        <input type="text" id="policyInput" class="form-control" placeholder="Enter policy number" />
+        <button class="btn btn-primary" onclick="checkPolicy()" id="checkBtn">
+            Check
+            <span class="spinner-border spinner-border-sm text-light ms-2" role="status" id="loadingSpinner" style="display:none;"></span>
+        </button>
+    </div>
+    <div class="result-message" id="resultMsg"></div>
 </div>
 
-<!-- Contact Info and Map Section -->
-<!-- Contact Info and Map Section -->
-<div class="container py-5" style="background-color:#f8f9fa; border-radius: 8px; margin-top: 3rem;">
-  <div class="row">
-
-    <!-- Contact Info -->
-    <div class="col-md-5 mb-4">
-      <h5 class="mb-4" style="color: teal; font-weight: 700;">Contact Us</h5>
-      <ul class="list-unstyled">
-        <li class="mb-3 d-flex align-items-start">
-          <i class="bi bi-telephone-fill" style="font-size: 1.2rem; color:teal; margin-right: 12px;"></i>
-          <div>
-            <a href="tel:+85515780078" style="color: #212529; text-decoration: none;">+855 15 78 00 78</a><br>
-            <a href="tel:+85523217878" style="color: #212529; text-decoration: none;">+855 23 21 78 78</a>
-          </div>
-        </li>
-        <li class="mb-3 d-flex align-items-start">
-          <i class="bi bi-envelope-fill" style="font-size: 1.2rem; color:teal; margin-right: 12px;"></i>
-          <a href="mailto:info@peoplenpartners.com" style="color: #212529; text-decoration: none;">info@peoplenpartners.com</a>
-        </li>
-        <li class="d-flex align-items-start">
-          <i class="bi bi-geo-alt-fill" style="font-size: 1.2rem; color:teal; margin-right: 12px;"></i>
-          <address style="margin: 0; color: #212529;">
-            Building No. 7E, Mao Tse Toung Blvd.,<br>
-            Sangkat Boeng Keng Kang 1,<br>
-            Khan Boeng Keng Kang,<br>
-            Phnom Penh, Cambodia.
-          </address>
-        </li>
-      </ul>
+<!-- Footer -->
+<footer class="mt-auto">
+    <div class="container">
+        <p class="mb-0">© <?= date("Y"); ?> People & Partners Insurance Plc. All rights reserved.</p>
     </div>
+</footer>
 
-    <!-- Google Map -->
-    <div class="col-md-7">
-      <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.068975733501!2d104.91985311526052!3d11.55916119186961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31095118e25abfdb%3A0x7c2d61eaba204536!2sPeople%20%26%20Partners%20Insurance%20Plc!5e0!3m2!1sen!2skh!4v1659928176820!5m2!1sen!2skh" 
-          width="100%" 
-          height="350" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
+<!-- JavaScript -->
+<script>
+    function checkPolicy() {
+        const policyNumber = document.getElementById("policyInput").value;
+        const resultMsg = document.getElementById("resultMsg");
+        const checkButton = document.getElementById("checkBtn");
+        const spinner = document.getElementById("loadingSpinner");
 
-  </div>
+        if (!policyNumber.trim()) {
+            resultMsg.textContent = "Please enter your policy number.";
+            resultMsg.style.color = "red";
+            return;
+        }
 
-  <div class="text-center mt-4" style="color: #6c757d; font-size: 0.9rem;">
-    &copy; People &amp; Partners Insurance Plc.
-  </div>
-</div>
+        // Start loading
+        checkButton.disabled = true;
+        spinner.style.display = "inline-block";
 
+        fetch("controllers/getdata.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: "policy_number_check=" + encodeURIComponent(policyNumber),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                // Use innerHTML to render any <br> tags in the message
+                resultMsg.innerHTML = data.message;
+                resultMsg.style.color = data.status_code === 1 ? "green" : "red";
 
-<?php include 'layouts/footer.php' ?>
+                if (data.status_code === 1) {
+                    setTimeout(() => {
+                        window.location.href = "dashboard";
+                    }, 1000);
+                }
+            })
+            .catch(() => {
+                resultMsg.textContent = "Error occurred while checking policy.";
+                resultMsg.style.color = "red";
+            })
+            .finally(() => {
+                // Stop loading
+                checkButton.disabled = false;
+                spinner.style.display = "none";
+            });
+    }
+
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

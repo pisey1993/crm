@@ -5,6 +5,24 @@ class ClaimModel {
     public function __construct(mysqli $mysqli) {
         $this->mysqli = $mysqli;
     }
+    // Get claims by id
+    public function getClaimById(int $id): ?array {
+        $sql = "SELECT * FROM claims_online WHERE id = ?";
+        $stmt = $this->mysqli->prepare($sql);
+        if (!$stmt) {
+            return null;
+        }
+
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $claim = $result->fetch_assoc();
+
+        $stmt->close();
+
+        return $claim ?: null;
+    }
 
     // Insert new claim
     public function insertClaim(array $data): bool {
