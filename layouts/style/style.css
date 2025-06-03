@@ -3,16 +3,16 @@ body {
     margin: 0;
     padding: 0;
     padding-top: 56px;
-    font-family: 'Noto Serif Khmer', serif;
+    font-family: "Hanuman", serif;
     background-color: #f5f7fa;
     color: #333;
 }
 
-h1, h2, h3,h4,h5 {
-    font-family: 'Alegreya', serif;
+h1, h2, h3,h4,h5,h6 {
+    font-family: Arial, sans-serif;
 }
 .font-khmer{
-    font-family: 'Noto Serif Khmer', serif;
+    font-family: "Hanuman", serif;
 }
 blockquote {
     font-family: 'Alegreya', serif;
@@ -175,6 +175,7 @@ blockquote {
     align-items: center;
     padding: 15px;
     gap: 0;
+
 }
 
 /* Wrapper for individual items */
@@ -195,6 +196,7 @@ blockquote {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
 }
 
 /* Line between items */
@@ -217,9 +219,9 @@ blockquote {
         /* horizontally center items */
         align-items: center;
         /* vertically center items */
+        display: none;
     }
 }
-
 
 /* Remove line for wrapped (stacked) items */
 @media (max-width: 600px) {
@@ -251,6 +253,7 @@ blockquote {
     transition: background-color 0.3s;
     border: none;
     white-space: nowrap;
+
 }
 
 /* Active tab */

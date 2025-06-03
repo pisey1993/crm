@@ -4,21 +4,22 @@ $title = 'crm';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>People & Partners Insurance Plc</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!-- Bootstrap & Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Noto+Serif+Khmer:wght@100..900&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Noto+Serif+Khmer:wght@100..900&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Custom Style -->
     <style>
         body {
-            font-family: "Noto Serif Khmer", serif;
+            font-family: Arial, sans-serif;
             padding-top: 70px;
         }
 
@@ -88,7 +89,8 @@ $title = 'crm';
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-teal fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="https://www.peoplenpartners.com/"><img src="https://ppicis.peoplenpartners.net/logo-long-white.png" alt="Logo" /></a>
+        <a class="navbar-brand" href="https://www.peoplenpartners.com/"><img
+                    src="https://ppicis.peoplenpartners.net/logo-long-white.png" alt="Logo"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -101,18 +103,22 @@ $title = 'crm';
 </nav>
 
 <!-- Main Section -->
-<div class="container search-box flex-grow-1">
-    <h2>Enter Your Policy Number</h2>
-    <div class="input-group mb-3">
-        <input type="text" id="policyInput" class="form-control" placeholder="Enter policy number" />
-        <button class="btn btn-primary" onclick="checkPolicy()" id="checkBtn">
-            Check
-            <span class="spinner-border spinner-border-sm text-light ms-2" role="status" id="loadingSpinner" style="display:none;"></span>
-        </button>
+<div class="row" style="margin-top: 5%">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 search-box flex-grow-1 animate__animated animate__fadeIn">
+        <h2>Enter Your Policy Number</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="policyInput" class="form-control" placeholder="Enter policy number"/>
+            <button class="btn btn-primary" onclick="checkPolicy()" id="checkBtn">
+                Check
+                <span class="spinner-border spinner-border-sm text-light ms-2" role="status" id="loadingSpinner"
+                      style="display:none;"></span>
+            </button>
+        </div>
+        <div class="result-message" id="resultMsg"></div>
     </div>
-    <div class="result-message" id="resultMsg"></div>
+    <div class="col-md-4"></div>
 </div>
-
 <!-- Footer -->
 <footer class="mt-auto">
     <div class="container">
@@ -140,7 +146,7 @@ $title = 'crm';
 
         fetch("controllers/getdata.php", {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
             body: "policy_number_check=" + encodeURIComponent(policyNumber),
         })
             .then((res) => res.json())

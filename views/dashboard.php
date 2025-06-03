@@ -1,6 +1,6 @@
 <?php include '../layouts/header.php' ?>
 
-<div class="content" style="background-color:#f5f5f5">
+<div class="content" style="background-color:#f5f5f5;margin-top: -35px">
     <div class="container py-4">
 
         <div class="mb-4">
@@ -16,60 +16,60 @@
 
                 <!-- Claims Column -->
                 <div class="col-md-4">
-                    <h5 style="color: teal; border-bottom: 2px solid teal; padding-bottom: 0.3rem; margin-bottom: 1rem;">
+                    <h6 style="color: teal; border-bottom: 2px solid teal; padding-bottom: 0.3rem; margin-bottom: 1rem;">
                         Claims <br>
                         <span class="font-khmer" style="font-size: 0.85rem; color: #555;">ការទាមទារ</span>
-                    </h5>
+                    </h6>
                     <a href="claims_online.php" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center mb-3"
                        style="height:150px; border-radius: 10px; color: teal;">
                         <i class="bi bi-file-earmark-plus" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Submit Claims<br><small style="font-size: 0.8rem; color: #555;" >ដាក់សំណើរ</small></span>
+                        <span><h6>Submit Claims</h6><small style="font-size: 0.8rem; color: #555;" >ដាក់សំណើរ</small></span>
                     </a>
                     <a href="checker" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center"
                        style="height:150px; border-radius: 10px; color: teal;">
                         <i class="bi bi-check-circle" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Claims Checker<br><small style="font-size: 0.8rem; color: #555;">ត្រួតពិនិត្យការទាមទារ</small></span>
+                        <span><h6>Claims Checker</h6><small style="font-size: 0.8rem; color: #555;">ត្រួតពិនិត្យការទាមទារ</small></span>
                     </a>
                 </div>
 
                 <!-- Finder Column -->
                 <div class="col-md-4">
-                    <h5 style="color: teal; border-bottom: 2px solid teal; padding-bottom: 0.3rem; margin-bottom: 1rem;">
+                    <h6 style="color: teal; border-bottom: 2px solid teal; padding-bottom: 0.3rem; margin-bottom: 1rem;">
                         Finder <br>
                         <span class="font-khmer" style="font-size: 0.85rem; color: #555;">កម្មវិធីស្វែងរក</span>
-                    </h5>
+                    </h6>
                     <a href="policy-finder.php" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center mb-3"
                        style="height:150px; border-radius: 10px; color: teal;">
                         <i class="bi bi-search" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Policy Finder<br><small style="font-size: 0.8rem; color: #555;">មើលពត័មានបណ្ណធានា</small></span>
+                        <span><h6>Policy Finder</span></h6><small style="font-size: 0.8rem; color: #555;">មើលពត័មានបណ្ណធានា</small></span>
                     </a>
                     <a href="https://www.peoplenpartners.com/panel-clinic" target="_blank" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center mb-3"
                        style="height:150px; border-radius: 10px; color: teal;">
                         <i class="bi bi-hospital" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Panel Clinic Finder<br><small style="font-size: 0.8rem; color: #555;">ស្វែងរកគ្លីនិកដៃគូ</small></span>
+                        <span><h6>Panel Clinic Finder</h6><small style="font-size: 0.8rem; color: #555;">ស្វែងរកគ្លីនិកដៃគូ</small></span>
                     </a>
                     <a href="https://www.peoplenpartners.com/repair-garage" target="_blank" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center"
                        style="height:150px; border-radius: 10px; color: teal;">
                         <i class="bi bi-tools" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Panel Garage Finder<br><small style="font-size: 0.8rem; color: #555;">ស្វែងរកហាងជួសជុលដៃគូរ</small></span>
+                        <span><h6>Panel Garage Finder</h6><small style="font-size: 0.8rem; color: #555;">ស្វែងរកហាងជួសជុលដៃគូរ</small></span>
                     </a>
                 </div>
 
                 <!-- Product Column -->
                 <div class="col-md-4">
-                    <h5 style="color: teal; border-bottom: 2px solid teal; padding-bottom: 0.3rem; margin-bottom: 1rem;">
+                    <h6 style="color: teal; border-bottom: 2px solid teal; padding-bottom: 0.3rem; margin-bottom: 1rem;">
                         Product <br>
                         <span class="font-khmer" style="font-size: 0.85rem; color: #555;">ផលិតផល</span>
-                    </h5>
+                    </h6>
                     <a href="buy-insurance.php" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center mb-3"
                        style="height:150px; border-radius: 10px; color: teal;">
                         <i class="bi bi-cart-plus" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Buy Insurance<br><small style="font-size: 0.8rem; color: #555;">ទិញកញ្ចប់ធានារ៉ាប់រង</small></span>
+                        <span><h6>Buy Insurance</h6><small style="font-size: 0.8rem; color: #555;">ទិញកញ្ចប់ធានារ៉ាប់រង</small></span>
                     </a>
                     <a href="request-quote-home.php" class="dashboard-btn text-decoration-none d-flex flex-column align-items-center justify-content-center"
                        style="height:150px; border-radius: 10px; color: teal;">
                         <i class="bi bi-pencil-square" style="font-size: 2rem; margin-bottom: 0.4rem;"></i>
-                        <span>Request Quote<br><small style="font-size: 0.8rem; color: #555;">ស្នើសុំតម្លៃ</small></span>
+                        <span><h6>Request Quote</h6><small style="font-size: 0.8rem; color: #555;">ស្នើសុំតម្លៃ</small></span>
                     </a>
                 </div>
 
@@ -85,10 +85,10 @@
 
         <!-- Contact Info -->
         <div class="col-md-5 mb-4">
-            <h5 class="mb-4" style="color: teal; font-weight: 700;">
+            <h6 class="mb-4" style="color: teal; font-weight: 700;">
                 Contact Us <br>
-                <span style="font-size: 0.85rem; color: #555;">ទំនាក់ទំនងមកយើងខ្ញុំ</span>
-            </h5>
+                <span class="font-khmer" style="font-size: 0.85rem; color: #555;">ទំនាក់ទំនងមកយើងខ្ញុំ</span>
+            </h6>
             <ul class="list-unstyled">
                 <li class="mb-3 d-flex align-items-start">
                     <i class="bi bi-telephone-fill" style="font-size: 1.2rem; color:teal; margin-right: 12px;"></i>

@@ -10,7 +10,7 @@ if (empty($_SESSION['policy_number'])) {
 }
 ?>
 
-<?php include '../controllers/getInsuredName.php'?>
+<?php include '../controllers/getInsuredName.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +22,15 @@ if (empty($_SESSION['policy_number'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bayon&family=Noto+Serif+Khmer:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bayon&family=Hanuman:wght@100;300;400;700;900&family=Noto+Serif+Khmer:wght@100..900&display=swap" rel="stylesheet">
+
     <link href="../layouts/style/style.css" rel="stylesheet">
     <link href="layouts/style/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="font-family: Arial, sans-serif">
     <div class="container-fluid">
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="">
@@ -129,16 +131,18 @@ if (empty($_SESSION['policy_number'])) {
                         <i class="bi bi-download"></i> Download
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="downloadDropdown">
-<!--                        <li>-->
-<!--                            <a class="dropdown-item" href="/--><?php //echo htmlspecialchars($title); ?><!--/download-policies">-->
-<!--                                <i class="bi bi-file-earmark-arrow-down"></i> Policy Documents-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a class="dropdown-item" href="/--><?php //echo htmlspecialchars($title); ?><!--/download-claims">-->
-<!--                                <i class="bi bi-file-earmark-arrow-down"></i> Claims Reports-->
-<!--                            </a>-->
-<!--                        </li>-->
+                        <!--                        <li>-->
+                        <!--                            <a class="dropdown-item" href="/-->
+                        <?php //echo htmlspecialchars($title); ?><!--/download-policies">-->
+                        <!--                                <i class="bi bi-file-earmark-arrow-down"></i> Policy Documents-->
+                        <!--                            </a>-->
+                        <!--                        </li>-->
+                        <!--                        <li>-->
+                        <!--                            <a class="dropdown-item" href="/-->
+                        <?php //echo htmlspecialchars($title); ?><!--/download-claims">-->
+                        <!--                                <i class="bi bi-file-earmark-arrow-down"></i> Claims Reports-->
+                        <!--                            </a>-->
+                        <!--                        </li>-->
                         <li>
                             <a class="dropdown-item" href="claim-forms">
                                 <i class="bi bi-file-earmark-arrow-down"></i> Claim Forms
@@ -156,4 +160,5 @@ if (empty($_SESSION['policy_number'])) {
         </div>
     </div>
 </nav>
+<div class="animate__animated animate__fadeIn">
 

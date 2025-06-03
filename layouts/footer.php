@@ -1,3 +1,4 @@
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -101,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', () => {
         const currentIndex = getCurrentTabIndex();
         activateTab(currentIndex + 1);
+
     });
 
     prevBtn.addEventListener('click', () => {
@@ -110,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize on page load
     updateButtonVisibility(getCurrentTabIndex());
+    document.getElementById('nextBtn').style.display = 'none';
 });
 
 
@@ -261,6 +264,7 @@ form.addEventListener('submit', (event) => {
                 document.getElementById('pcheck').style.display = 'block';
                 document.getElementById('policy').style.display = 'none';
                 document.getElementById('policy_number').value = policyNumberCheck.value;
+                document.getElementById('nextBtn').style.display = 'block';
             } else {
                 document.getElementById('myTabContent').style.display = 'none';
             }
@@ -281,7 +285,7 @@ form.addEventListener('submit', (event) => {
 
 <!--<hr>-->
 <!--<p>&copy; -->
-<?//= date('Y') ?>
+
 <!-- PPI CRM</p>-->
 </body>
 
