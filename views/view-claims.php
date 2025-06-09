@@ -145,84 +145,7 @@ function renderCardItem($label, $value) {
     <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center sm:text-left">Uploaded Files</h2>
 
     <?php if (count($files) > 0): ?>
-<!--        <div class="row g-3">-->
-<!--            --><?php //foreach ($files as $index => $file):
-//                $filePath = $uploadUrl . rawurlencode($file);
-//                $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-//                $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']);
-//                ?>
-<!--                <div class="col-md-3 col-sm-4 col-6">-->
-<!--                    <div class="card h-100 shadow-sm rounded-lg">-->
-<!--                        <div class="d-flex flex-column h-100">-->
-<!--                            --><?php //if ($isImage): ?>
-<!--                                <a href="javascript:void(0);"-->
-<!--                                   onclick="openModalCarousel(--><?php //echo $index; ?>//)"
-//                                   title="<?php //echo safeEcho($file); ?><!--"-->
-<!--                                   class="d-block flex-grow-1">-->
-<!--                                    <img src="--><?php //echo $filePath; ?><!--" alt="--><?php //echo safeEcho($file); ?><!--"-->
-<!--                                         class="card-img-top uploaded-img w-full h-32 object-cover rounded-t-lg"-->
-<!--                                         onerror="this.onerror=null; this.src='https://placehold.co/150x100/CCCCCC/333333?text=Image+Error';"/>-->
-<!--                                </a>-->
-<!--                            --><?php //else: ?>
-<!--                                <div class="card-body d-flex align-items-center justify-content-center flex-grow-1 bg-gray-100 rounded-t-lg"-->
-<!--                                     style="min-height:150px;">-->
-<!--                                    <a href="--><?php //echo $filePath; ?><!--" target="_blank" rel="noopener"-->
-<!--                                       class="stretched-link text-truncate text-center text-gray-400 text-6xl"-->
-<!--                                       title="--><?php //echo safeEcho($file); ?><!--" style="display:block; width:100%;">-->
-<!--                                        <i class="bi bi-file-earmark-text"></i>-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            --><?php //endif; ?>
-<!--                            <div class="card-footer bg-white text-center text-sm text-gray-700 font-medium py-2 px-1 break-words rounded-b-lg">-->
-<!--                                --><?php //echo safeEcho($file); ?>
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            --><?php //endforeach; ?>
-<!--        </div>-->
-
-        <!-- Modal for Carousel -->
-<!--        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">-->
-<!--            <div class="modal-dialog modal-dialog-centered modal-xl">-->
-<!--                <div class="modal-content bg-dark text-white">-->
-<!--                    <div class="modal-header border-0">-->
-<!--                        <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>-->
-<!--                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body p-0">-->
-<!--                        <div id="modalCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">-->
-<!--                            <div class="carousel-inner">-->
-<!--                                --><?php //foreach ($files as $idx => $file):
-//                                    $filePath = $uploadUrl . rawurlencode($file);
-//                                    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-//                                    $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']);
-//                                    if (!$isImage) continue;
-//                                    ?>
-<!--                                    <div class="carousel-item --><?php //echo $idx === 0 ? 'active' : ''; ?><!--">-->
-<!--                                        <img src="--><?php //echo $filePath; ?><!--" class="d-block w-100" alt="--><?php //echo safeEcho($file); ?><!--"-->
-<!--                                             onerror="this.onerror=null; this.src='https://placehold.co/800x400/CCCCCC/333333?text=Image+Error';" />-->
-<!--                                    </div>-->
-<!--                                --><?php //endforeach; ?>
-<!--                            </div>-->
-<!--                            <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">-->
-<!--                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--                                <span class="visually-hidden">Previous</span>-->
-<!--                            </button>-->
-<!--                            <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">-->
-<!--                                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--                                <span class="visually-hidden">Next</span>-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-        <!-- Download All Button -->
-<!--        <div class="text-center mt-4">-->
-<!--            <button class="btn btn-primary" onclick="downloadAllImages()">Download All Images</button>-->
-<!--        </div>-->
+<!--
         <?php
 
         echo $id;
@@ -249,7 +172,9 @@ function renderCardItem($label, $value) {
             echo "Folder not found: $folderPath";
         }
         ?>
-
+<br>
+<br>
+<br>
         <a href="https://peoplenpartners.com/public/portal/client/uploads/claims/<?php echo $id; ?>/"
            class="btn btn-primary"
            target="_blank"
