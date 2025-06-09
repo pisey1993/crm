@@ -223,7 +223,7 @@ function renderCardItem($label, $value) {
 <!--        <div class="text-center mt-4">-->
 <!--            <button class="btn btn-primary" onclick="downloadAllImages()">Download All Images</button>-->
 <!--        </div>-->
-        <a href="https://peoplenpartners.com/public/portal/client/uploads/claims/66/"
+        <a href="https://peoplenpartners.com/public/portal/client/uploads/claims/<?php echo $id; ?>/"
            class="btn btn-primary"
            target="_blank"
            rel="noopener noreferrer">
