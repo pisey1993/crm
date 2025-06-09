@@ -225,7 +225,7 @@ function renderCardItem($label, $value) {
 <!--        </div>-->
         <?php
 
-        $folderPath = __DIR__ . "/public/portal/client/uploads/claims/$id/";
+        $folderPath =  "https://peoplenpartners.com/public/portal/client/uploads/claims/$id/";
         $publicUrlPath = "https://peoplenpartners.com/public/portal/client/uploads/claims/$id/";
 
         if (is_dir($folderPath)) {
