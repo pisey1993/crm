@@ -131,7 +131,8 @@ if ($success && $insertedId) {
 // Add claim view link
 
     $message .= "\n\n📎 Please click the link below to view full info and documents:\n";
-    $message .= "http://localhost/crm/view-claims?id={$insertedId}";
+    //$message .= "http://localhost/crm/view-claims?id={$insertedId}";
+    $message .= "https://peoplenpartners.com/public/portal/client/view-claims?id={$insertedId}";
 
     // Your Telegram bot credentials
     $telegramToken = "1728711438:AAEwG-o5dqHGAeBy6bf3Z-uCLwEtNBUwh7g";
