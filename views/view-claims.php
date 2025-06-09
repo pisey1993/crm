@@ -220,9 +220,15 @@ function renderCardItem($label, $value) {
         </div>
 
         <!-- Download All Button -->
-        <div class="text-center mt-4">
-            <button class="btn btn-primary" onclick="downloadAllImages()">Download All Images</button>
-        </div>
+<!--        <div class="text-center mt-4">-->
+<!--            <button class="btn btn-primary" onclick="downloadAllImages()">Download All Images</button>-->
+<!--        </div>-->
+        <a href="https://peoplenpartners.com/public/portal/client/uploads/claims/66/"
+           class="btn btn-primary"
+           target="_blank"
+           rel="noopener noreferrer">
+            View Uploaded Files
+        </a>
 
         <script>
             const files = <?php echo json_encode($files); ?>;
