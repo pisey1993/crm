@@ -12,7 +12,6 @@ require_once '../models/ClaimsOnline.php';
 
 $claimModel = new ClaimModel($connection);
 $id = $_GET['id'] ?? null;
-echo $id;
 if (!$id || !is_numeric($id)) {
     die("Invalid claim ID.");
 }
@@ -224,7 +223,6 @@ function renderCardItem($label, $value) {
 <!--        </div>-->
         <?php
 
-        echo $id;
 // Local server path to the folder
         $folderPath = $_SERVER['DOCUMENT_ROOT'] . "/public/portal/client/uploads/claims/$id/";
 
