@@ -1,7 +1,11 @@
 <?php
+session_start(); // ⬅️ First line, no whitespace above it
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+require_once '../config/db.php';
+require_once '../models/ClaimsOnline.php';
 
 require_once '../config/db.php';
 require_once '../models/ClaimsOnline.php';
