@@ -31,7 +31,7 @@ $uploadDir = __DIR__ . "/../uploads/claims/" . $id . "/";
 //$uploadUrl = "/crm/uploads/claims/" . $id . "/";
 $uploadUrl = "client/uploads/claims/" . $id . "/";
 $files = [];
-
+echo $uploadUrl;
 if (is_dir($uploadDir)) {
     $allFiles = scandir($uploadDir);
     foreach ($allFiles as $file) {
