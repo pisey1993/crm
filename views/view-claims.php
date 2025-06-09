@@ -183,46 +183,68 @@ function renderCardItem($label, $value) {
         </div>
 
         <!-- Modal for Carousel -->
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content bg-dark text-white">
-                    <div class="modal-header border-0">
-                        <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-0">
-                        <div id="modalCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-                            <div class="carousel-inner">
-                                <?php foreach ($files as $idx => $file):
-                                    $filePath = $uploadUrl . rawurlencode($file);
-                                    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-                                    $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']);
-                                    if (!$isImage) continue;
-                                    ?>
-                                    <div class="carousel-item <?php echo $idx === 0 ? 'active' : ''; ?>">
-                                        <img src="<?php echo $filePath; ?>" class="d-block w-100" alt="<?php echo safeEcho($file); ?>"
-                                             onerror="this.onerror=null; this.src='https://placehold.co/800x400/CCCCCC/333333?text=Image+Error';" />
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">-->
+<!--            <div class="modal-dialog modal-dialog-centered modal-xl">-->
+<!--                <div class="modal-content bg-dark text-white">-->
+<!--                    <div class="modal-header border-0">-->
+<!--                        <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>-->
+<!--                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body p-0">-->
+<!--                        <div id="modalCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">-->
+<!--                            <div class="carousel-inner">-->
+<!--                                --><?php //foreach ($files as $idx => $file):
+//                                    $filePath = $uploadUrl . rawurlencode($file);
+//                                    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+//                                    $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']);
+//                                    if (!$isImage) continue;
+//                                    ?>
+<!--                                    <div class="carousel-item --><?php //echo $idx === 0 ? 'active' : ''; ?><!--">-->
+<!--                                        <img src="--><?php //echo $filePath; ?><!--" class="d-block w-100" alt="--><?php //echo safeEcho($file); ?><!--"-->
+<!--                                             onerror="this.onerror=null; this.src='https://placehold.co/800x400/CCCCCC/333333?text=Image+Error';" />-->
+<!--                                    </div>-->
+<!--                                --><?php //endforeach; ?>
+<!--                            </div>-->
+<!--                            <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">-->
+<!--                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                                <span class="visually-hidden">Previous</span>-->
+<!--                            </button>-->
+<!--                            <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">-->
+<!--                                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                                <span class="visually-hidden">Next</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <!-- Download All Button -->
 <!--        <div class="text-center mt-4">-->
 <!--            <button class="btn btn-primary" onclick="downloadAllImages()">Download All Images</button>-->
 <!--        </div>-->
+        <?php
+
+        $folderPath = __DIR__ . "/public/portal/client/uploads/claims/$id/";
+        $publicUrlPath = "https://peoplenpartners.com/public/portal/client/uploads/claims/$id/";
+
+        if (is_dir($folderPath)) {
+            $files = scandir($folderPath);
+            foreach ($files as $file) {
+                if ($file !== '.' && $file !== '..') {
+                    $fileUrl = $publicUrlPath . $file;
+                    $fileExtension = pathinfo($file, PATHINFO_EXTENSION);
+                    $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+
+                    if (in_array(strtolower($fileExtension), $allowedExtensions)) {
+                        echo "<img src=\"$fileUrl\" alt=\"Uploaded Image\" style=\"max-width: 200px; margin: 10px;\">";
+                    }
+                }
+            }
+        } else {
+            echo "No uploaded files found.";
+        }
+        ?>
         <a href="https://peoplenpartners.com/public/portal/client/uploads/claims/<?php echo $id; ?>/"
            class="btn btn-primary"
            target="_blank"
