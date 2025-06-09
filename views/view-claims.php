@@ -20,7 +20,8 @@ function safeEcho($val) {
 }
 
 $uploadDir = __DIR__ . "/../uploads/claims/" . $id . "/";
-$uploadUrl = "/crm/uploads/claims/" . $id . "/";
+//$uploadUrl = "/crm/uploads/claims/" . $id . "/";
+$uploadUrl = "/client/uploads/claims/" . $id . "/";
 $files = [];
 
 if (is_dir($uploadDir)) {
