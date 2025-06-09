@@ -145,42 +145,42 @@ function renderCardItem($label, $value) {
     <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center sm:text-left">Uploaded Files</h2>
 
     <?php if (count($files) > 0): ?>
-        <div class="row g-3">
-            <?php foreach ($files as $index => $file):
-                $filePath = $uploadUrl . rawurlencode($file);
-                $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-                $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']);
-                ?>
-                <div class="col-md-3 col-sm-4 col-6">
-                    <div class="card h-100 shadow-sm rounded-lg">
-                        <div class="d-flex flex-column h-100">
-                            <?php if ($isImage): ?>
-                                <a href="javascript:void(0);"
-                                   onclick="openModalCarousel(<?php echo $index; ?>)"
-                                   title="<?php echo safeEcho($file); ?>"
-                                   class="d-block flex-grow-1">
-                                    <img src="<?php echo $filePath; ?>" alt="<?php echo safeEcho($file); ?>"
-                                         class="card-img-top uploaded-img w-full h-32 object-cover rounded-t-lg"
-                                         onerror="this.onerror=null; this.src='https://placehold.co/150x100/CCCCCC/333333?text=Image+Error';"/>
-                                </a>
-                            <?php else: ?>
-                                <div class="card-body d-flex align-items-center justify-content-center flex-grow-1 bg-gray-100 rounded-t-lg"
-                                     style="min-height:150px;">
-                                    <a href="<?php echo $filePath; ?>" target="_blank" rel="noopener"
-                                       class="stretched-link text-truncate text-center text-gray-400 text-6xl"
-                                       title="<?php echo safeEcho($file); ?>" style="display:block; width:100%;">
-                                        <i class="bi bi-file-earmark-text"></i>
-                                    </a>
-                                </div>
-                            <?php endif; ?>
-                            <div class="card-footer bg-white text-center text-sm text-gray-700 font-medium py-2 px-1 break-words rounded-b-lg">
-                                <?php echo safeEcho($file); ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
+<!--        <div class="row g-3">-->
+<!--            --><?php //foreach ($files as $index => $file):
+//                $filePath = $uploadUrl . rawurlencode($file);
+//                $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+//                $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']);
+//                ?>
+<!--                <div class="col-md-3 col-sm-4 col-6">-->
+<!--                    <div class="card h-100 shadow-sm rounded-lg">-->
+<!--                        <div class="d-flex flex-column h-100">-->
+<!--                            --><?php //if ($isImage): ?>
+<!--                                <a href="javascript:void(0);"-->
+<!--                                   onclick="openModalCarousel(--><?php //echo $index; ?>//)"
+//                                   title="<?php //echo safeEcho($file); ?><!--"-->
+<!--                                   class="d-block flex-grow-1">-->
+<!--                                    <img src="--><?php //echo $filePath; ?><!--" alt="--><?php //echo safeEcho($file); ?><!--"-->
+<!--                                         class="card-img-top uploaded-img w-full h-32 object-cover rounded-t-lg"-->
+<!--                                         onerror="this.onerror=null; this.src='https://placehold.co/150x100/CCCCCC/333333?text=Image+Error';"/>-->
+<!--                                </a>-->
+<!--                            --><?php //else: ?>
+<!--                                <div class="card-body d-flex align-items-center justify-content-center flex-grow-1 bg-gray-100 rounded-t-lg"-->
+<!--                                     style="min-height:150px;">-->
+<!--                                    <a href="--><?php //echo $filePath; ?><!--" target="_blank" rel="noopener"-->
+<!--                                       class="stretched-link text-truncate text-center text-gray-400 text-6xl"-->
+<!--                                       title="--><?php //echo safeEcho($file); ?><!--" style="display:block; width:100%;">-->
+<!--                                        <i class="bi bi-file-earmark-text"></i>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            --><?php //endif; ?>
+<!--                            <div class="card-footer bg-white text-center text-sm text-gray-700 font-medium py-2 px-1 break-words rounded-b-lg">-->
+<!--                                --><?php //echo safeEcho($file); ?>
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            --><?php //endforeach; ?>
+<!--        </div>-->
 
         <!-- Modal for Carousel -->
 <!--        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">-->
@@ -225,26 +225,31 @@ function renderCardItem($label, $value) {
 <!--        </div>-->
         <?php
 
-        $folderPath =  "https://peoplenpartners.com/public/portal/client/uploads/claims/$id/";
+        echo $id;
+// Local server path to the folder
+        $folderPath = $_SERVER['DOCUMENT_ROOT'] . "/public/portal/client/uploads/claims/$id/";
+
+// Public URL to access files
         $publicUrlPath = "https://peoplenpartners.com/public/portal/client/uploads/claims/$id/";
 
         if (is_dir($folderPath)) {
             $files = scandir($folderPath);
             foreach ($files as $file) {
                 if ($file !== '.' && $file !== '..') {
-                    $fileUrl = $publicUrlPath . $file;
                     $fileExtension = pathinfo($file, PATHINFO_EXTENSION);
                     $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
 
                     if (in_array(strtolower($fileExtension), $allowedExtensions)) {
+                        $fileUrl = $publicUrlPath . $file;
                         echo "<img src=\"$fileUrl\" alt=\"Uploaded Image\" style=\"max-width: 200px; margin: 10px;\">";
                     }
                 }
             }
         } else {
-            echo "No uploaded files found.";
+            echo "Folder not found: $folderPath";
         }
         ?>
+
         <a href="https://peoplenpartners.com/public/portal/client/uploads/claims/<?php echo $id; ?>/"
            class="btn btn-primary"
            target="_blank"
