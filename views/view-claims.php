@@ -30,7 +30,7 @@ $uploadDir = __DIR__ . "/../uploads/claims/" . $id . "/";
 //$uploadUrl = "/crm/uploads/claims/" . $id . "/";
 $uploadUrl = "client/uploads/claims/" . $id . "/";
 $files = [];
-echo $uploadUrl;
+
 if (is_dir($uploadDir)) {
     $allFiles = scandir($uploadDir);
     foreach ($allFiles as $file) {
@@ -238,7 +238,10 @@ function renderCardItem($label, $value) {
 
                     if (in_array(strtolower($fileExtension), $allowedExtensions)) {
                         $fileUrl = $publicUrlPath . $file;
-                        echo "<img src=\"$fileUrl\" alt=\"Uploaded Image\" style=\"max-width: 200px; margin: 10px;\">";
+                        echo "<div style=\"display:inline-block; text-align:center; margin:10px;\">";
+                        echo "<img src=\"$fileUrl\" alt=\"Uploaded Image\" style=\"max-width:200px; display:block; margin-bottom:5px;\">";
+                        echo "<small>$file</small>";
+                        echo "</div>";
                     }
                 }
             }
