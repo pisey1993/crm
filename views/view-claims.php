@@ -7,8 +7,8 @@ session_start(); // ⬅️ First line, no whitespace above it
 require_once '../config/db.php';
 require_once '../models/ClaimsOnline.php';
 
-require_once '../config/db.php';
-require_once '../models/ClaimsOnline.php';
+//require_once '../config/db.php';
+//require_once '../models/ClaimsOnline.php';
 
 $claimModel = new ClaimModel($connection);
 $id = $_GET['id'] ?? null;
@@ -29,7 +29,7 @@ function safeEcho($val) {
 
 $uploadDir = __DIR__ . "/../uploads/claims/" . $id . "/";
 //$uploadUrl = "/crm/uploads/claims/" . $id . "/";
-$uploadUrl = "client/uploads/claims/" . $id . "/";
+$uploadUrl = "https://peoplenpartners.com/public/portal/client/public/uploads/claims/" . $id . "/";
 $files = [];
 
 if (is_dir($uploadDir)) {
